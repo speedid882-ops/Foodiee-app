@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f05a28"><link rel="manifest" href="manifest.json">
+<title>FOODiEe — Food, delivered</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top"><a class="brand" href="#"><span class="logo">F</span> FOODiEe</a><button id="cartButton" class="cart-button">Cart <span id="cartCount">0</span></button></header>
+<main>
+<section class="hero"><div><p class="eyebrow">GOOD FOOD. GOOD MOOD.</p><h1>Your cravings,<br><span>delivered.</span></h1><p>Discover local restaurants and order your favourites.</p><div class="search-row"><input id="search" placeholder="Search restaurants or dishes..." aria-label="Search restaurants or dishes"><button id="searchBtn">Search</button></div></div><div class="hero-art" aria-hidden="true">🍔<span>🍕</span><b>🍜</b></div></section>
+<div class="section-head"><div><p class="eyebrow">EXPLORE</p><h2>Restaurants near you</h2></div><select id="filter"><option value="all">All cuisines</option><option>Indian</option><option>Pizza</option><option>Chinese</option></select></div>
+<section id="restaurants" class="restaurant-grid"></section>
+<section class="menu-section" id="menuSection" hidden><div class="section-head"><div><p class="eyebrow">MENU</p><h2 id="menuTitle">Menu</h2></div><button class="ghost" id="backBtn">← All restaurants</button></div><div id="menuItems" class="food-grid"></div></section>
+<section class="panel" id="cartPanel" hidden><div class="section-head"><div><p class="eyebrow">YOUR ORDER</p><h2>Your cart</h2></div><button class="ghost" id="closeCart">Close ✕</button></div><p class="hint">MVP demo: one order can contain items from one restaurant only.</p><div id="cartItems"></div><div class="total-row"><span>Total</span><strong id="cartTotal">₹0</strong></div><form id="checkoutForm"><h3>Delivery details</h3><input name="customer" placeholder="Your name" required><input name="phone" placeholder="Phone number" inputmode="tel" required><textarea name="address" placeholder="Delivery address" required></textarea><label class="check"><input type="radio" name="fulfilment" value="Delivery" checked> Delivery</label><label class="check"><input type="radio" name="fulfilment" value="Pickup"> Pickup</label><button class="primary wide" type="submit">Place demo order</button></form><p class="hint">No real payment is collected in this prototype.</p></section>
+<section class="panel dashboard"><div class="section-head"><div><p class="eyebrow">FOR PARTNERS</p><h2>Restaurant dashboard</h2></div><span class="tag">Demo</span></div><p class="hint">Prototype dashboard showing orders saved in this browser. Production requires login and a shared database.</p><div class="tabs"><button class="tab active" data-tab="restaurantOrders">Orders</button><button class="tab" data-tab="partnerMenu">Menu manager</button><button class="tab" data-tab="adminPanel">Platform admin</button></div><div id="restaurantOrders" class="tab-content"><div id="ordersList"></div></div><div id="partnerMenu" class="tab-content" hidden><p>Menu management will be connected to the secure database in the production build.</p><button class="ghost" id="demoMenuBtn">Show demo menu items</button><div id="demoMenu"></div></div><div id="adminPanel" class="tab-content" hidden><p>Admin tools: restaurant approval, commission settings, disputes and settlement tracking.</p><div class="stat-grid"><div><strong>3</strong><span>Sample restaurants</span></div><div><strong>15%</strong><span>Example commission</span></div><div><strong>Demo</strong><span>Payment mode</span></div></div></div></section>
+</main><footer><strong>FOODiEe</strong><span>Local flavour, one tap away.</span><small>Prototype only • No live payments or real order notifications</small></footer>
+<div id="toast" role="status" aria-live="polite"></div><script src="app.js"></script>
+</body></html>
